@@ -39,6 +39,14 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
+        with:
+          start: bundle exec rails server -e test -p 5017
+          # quote the url to be safe against YML parsing surprises
+          wait-on: 'http://localhost:5017'
+          browser: chrome
+          headless: true
 
   # lint:
   #   runs-on: ubuntu-latest

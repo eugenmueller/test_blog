@@ -77,3 +77,7 @@ gem 'tailwindcss-rails', '~> 2.0'
 
 gem 'bundler-audit', require: false
 gem 'ruby_audit', require: false
+
+group :test, :development do
+  gem 'cypress-on-rails', '~> 1.0'
+end

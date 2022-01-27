@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: test_blog_development
+  database: <%= ENV['CYPRESS'] ? 'test_blog_test' : 'test_blog_development' %> 
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
